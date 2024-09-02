@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses</title>
+    <style>
+    .container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%; 
+        height: 100vh; 
+        box-sizing: border-box; 
+    }
+
+    .top-division {
+        width: 100%; 
+        background-color: #f8f9fa;
+        padding: 0px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    
+    .bottom-container {
+        display: flex;
+        justify-content: center; 
+        gap: 20px;
+        width: 1200px;
+        padding: 50px; 
+        box-sizing: border-box;
+        flex-grow: 1; 
+    }
+
+    
+    .bottom-division {
+        background-color: #e9ecef;
+        /* padding: 10px; */
+        text-align: center;
+        border: 1px solid #ccc;
+        width: 1200px; 
+        height: 300px;
+    }
+</style>
+</head>
+<body>
+
+    
+<div class="container">
+    <!-- Top Division -->
+    <div class="top-division">
+      <h1>KENDRICK UNIVERSITY COURSES</h1>
+    </div>
+
+    <!-- Bottom Divisions Container -->
+    <div class="bottom-container">
+        <!-- Left Division -->
+        <div class="bottom-division">
+            <h2>Add a New Course</h2>
+            <form action="add_course.php" method="POST">
+                <label for="course_name">Course Name:</label><br>
+                <input type="text" id="course_name" name="course_name" required><br><br>
+        
+                <label for="course_code">Course_code:</label><br>
+                <input type="text" id="course_code" name="course_code" required><br><br>
+        
+                <input type="submit" value="Add Course">
+            </form>
+        </div>
+
+        <!-- Right Division -->
+        <div class="bottom-division">
+            <h2>Delete a Course</h2>
+        <form action="delete_course.php" method="POST">
+            <label for="course_id">Course ID:</label><br>
+            <input type="number" id="course_id" name="course_id" required><br><br>
+    
+            <input type="submit" value="Delete Course">
+        </form>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

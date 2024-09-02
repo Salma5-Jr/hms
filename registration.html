@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    font-family: Arial,sans-serif;
+    background-color: rgb(250, 250, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+.reg{
+   background-color: rgb(13, 60, 92); 
+   padding: 30px;
+   width: 300px;
+   border-radius: 4px;
+   box-shadow: 10px 10px 5px black;
+   align-items: center;
+}
+ h1{
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+ input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+ button {
+    width: 50%;
+    padding: 10px;
+    background-color: #0d0d0e;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+ button:hover {
+    background-color: #d6dbdb;
+    ;
+    
+ }
+    </style>
+</head>
+<body class="body">
+        <form action="register.php" method="POST">
+            <div class="reg">
+                <h1>REGISTRATION FORM</h1>
+                firstname:<input type="text" name="firstname" placeholder="firstname" required><br><br>
+                middlename:<input type="text" name="middlename" placeholder="middlename" required><br><br>
+                Lastname:<input type="text" name="lastname" placeholder="lastname" required><br><br>
+        course name: <input type="text" name="course" placeholder="course" required>
+        Year of study:<input type="number" name="year" placeholder="year" required><br><br>
+        email:<input type="email" name="email" placeholder="email" required><br><br>
+      <!-- contact:<input type="number" name="contact" placeholder="contact" required><br><br> -->
+        Password:<input type="password" id="pass1" name="password" placeholder="password" required><br><br>
+        confirm:<input type="password" id="pass2" name="password" placeholder="confirm" required><br><br>
+                <button>submit</button>
+                
+            </div>
+
+
+            <script>
+    
+                let a = document.getElementById("pass1");
+                let  b = document.getElementById("pass2");
+                let x = document.getElementById("submit");
+                button.disabled = true;
+                
+                document.getElementById("pass1").addEventListener("input", function(){
+                 
+                 if(pass1.value == pass2.value){
+                     document.getElementById("submit").disabled = false;
+                 }
+                });
+            </script>
+        </form>
+            
+</body>
+</html>

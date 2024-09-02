@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack the divisions vertically */
+        height: 100vh; /* Use full viewport height */
+    }
+
+    /* Top division styling */
+    .top-division {
+        background-color: #f8f9fa;
+        height: 2%; /* Top division takes 30% of the container height */
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Bottom division styling */
+    .bottom-division {
+        background-color: #e9ecef;
+        height: 5%; /* Bottom division takes 70% of the container height */
+        padding: 0px;
+        text-align: center;
+    }
+    h1{
+        padding: 0px;
+        margin: 0px;
+    }
+    a{
+        left: 2px;
+        justify-content: space-evenly;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Top Division -->
+        <div class="top-division">
+            <h1>BRIGHT UNIVERSITY</h1>
+        </div>
+
+        <div class="bottom-division">
+          <a href="homepage.html">HOME</a>
+          <a href="hostel.html">HOSTELS</a>
+          <a href="login.html">LOGIN</a>
+          <a href="registration.html">REGISTER</a>
+          <a href="feedback.php">FEEDBACK</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,13 +8,11 @@ body{
     margin: 0;
     height: 100vh;
 }
-.container{
-   background-color: rgb(124, 121, 123); 
+.login{
+   background-color: rgb(13, 60, 92); 
    padding: 30px;
    width: 300px;
    border-radius: 4px;
-   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-   /* box-shadow: #0d0d0e; */
    box-shadow: 10px 10px 5px black;
    align-items: center;
 }
@@ -22,12 +20,7 @@ body{
     font-style: italic;
     margin-bottom: 10px;
 }
-/* .reg-container label{
-    align-items: left;
-    margin-bottom: 8px;
-    display: block;
-    color: #fff;
-} */
+
  input{
     width: 100%;
     padding: 10px;
