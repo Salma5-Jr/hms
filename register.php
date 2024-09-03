@@ -4,7 +4,6 @@ $firstname = $_POST['firstname'];
 $middlename = $_POST['middlename'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
-// $contact = $_POST['contact'];
 $year = $_POST['year'];
 $course= $_POST['course'];
 $password = $_POST['password'];
@@ -27,20 +26,20 @@ mysqli_query($conn,$sql);
 
 //insert data
 if( isset($firstname) && isset($middlename)&& isset($lastname)&& isset($email)&& isset($course)&&
- isset($year)&& isset($contact)&& isset($password)){
-    $sqlquery = "INSERT INTO registers (firstname,middlename,lastname,email,course,contact,
+ isset($year)&& isset($password)){
+    $sqlquery = "INSERT INTO registers (firstname,middlename,lastname,email,course,
     year,password) VALUES('$firstname', '$middlename','$lastname','$email','$year','$course','$password');";
     print("succesfully");
 
+
+
     try{
         mysqli_query($conn, $sqlquery);
-        header("Location:login.html");
+        header("Location:");
         print("sent");
         die();
     }catch(Exception $error){
         echo 'ERROR'.$error;
     }     
    }
-?>
-?>
 ?>

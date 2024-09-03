@@ -1,5 +1,7 @@
 <?php
 include_once 'connect.php';
+$course_name=$_POST['course_name'];
+$course_code = $_POST['course_code'];
 
 // Check connection
 if (!$conn) {
@@ -9,22 +11,69 @@ if (!$conn) {
     print("successfully");
 }
 
-// Get form data
-$course_name = $_POST['course_name'];
-$course_description = $_POST['course_description'];
+$sql = "CREATE TABLE courses(ID int NOT NULL AUTO_INCREMENT, PRIMARY KEY(ID),course_name VARCHAR(30),
+course_code VARCHAR(30)
+);";
+mysqli_query($conn,$sql);
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO courses (course_name, course_description) VALUES (?, ?)");
-$stmt->bind_param("ss", $course_name, $course_description);
+$sql = "INSERT INTO courses (course_name, course_code) VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
 
-// Execute the statement
-if ($stmt->execute()) {
-    echo "New course added successfully";
+// Check if the preparation was successful
+if ($stmt === false) {
+    die("Error preparing statement: " . $conn->error);
+}
+
+// Bind parameters
+$stmt->bind_param("ss", $course_name, $course_code);
+
+
+
+if ($stmt->execute() === true) {
+    echo "New record created successfully";
 } else {
     echo "Error: " . $stmt->error;
 }
 
-// Close the connection
+// Close the statement and connection
 $stmt->close();
 $conn->close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get form data
+// $course_name = $_POST['course_name'];
+// $course_code = $_POST['course_code'];
+
+// Prepare and bind
+// $stmt = $conn->prepare("INSERT INTO courses (course_name, course_code) VALUES (?, ?)");
+// $stmt->bind_param("ss",$course_name, $course_code);
+
+// Execute the statement
+// if ($stmt->execute()) {
+//     echo "New course added successfully";
+// } else {
+//     echo "Error: " . $stmt->error;
+// }
+
+// Close the connection
+// $stmt->close();
+// $conn->close();
 ?>
