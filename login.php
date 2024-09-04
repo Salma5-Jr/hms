@@ -28,7 +28,7 @@ if($result->num_rows>0){
 }
 
 try{
-    mysqli_query($conn, $sqlquery);
+    mysqli_query($conn, $sql);
     header("Location:");
     print("sent");
     die();
