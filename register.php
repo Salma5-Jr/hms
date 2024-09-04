@@ -33,7 +33,7 @@ if(isset($firstname) && isset($middlename)&& isset($lastname)&& isset($email)&& 
 
     try{
         mysqli_query($conn, $sqlquery);
-        header("Location:");
+        header("Location:login.html");
         print("sent");
         die();
     }catch(Exception $error){

@@ -27,6 +27,15 @@ if($result->num_rows>0){
     echo "0 results";
 }
 
+try{
+    mysqli_query($conn, $sqlquery);
+    header("Location:");
+    print("sent");
+    die();
+}catch(Exception $error){
+    echo 'ERROR'.$error;
+}   
+
 // Close the connection
 $conn->close();
 
