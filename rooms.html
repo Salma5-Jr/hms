@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body{
+
+
+display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the parallel divisions horizontally */
+        width: 100%; /* Full width of the page */
+        height: 100vh; /* Full height of the viewport */
+        box-sizing: border-box;
+}
+.room{
+background-color: rgb(13, 60, 92); 
+padding: 60px;
+margin: 60px;
+width: 300px;
+border-radius: 4px;
+box-shadow: 10px 10px 5px black;
+align-items: center;
+}
+h1{
+font-style: italic;
+margin-bottom: 10px;
+}
+
+input{
+width: 100%;
+padding: 10px;
+margin-bottom: 5px;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+
+button {
+width: 50%;
+padding: 10px;
+background-color: #0d0d0e;
+color: #fff;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #d6dbdb;
+;
+
+}
+.heading{
+        width: 100%; /* Full width of the container */
+        background-color: #7b96b4;
+        padding: 1px;
+        text-align: center;
+        justify-content: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+
+</style>
+
+
+    </style>
+</head>
+<body>
+    <div class="heading"><h1>KENDRICK UNIVERSITY ROOMS BOOKING SYSTEM</h1></div>
+    
+    <div class="room">
+        <form method="post" action="rooms.php">
+            <label for="house">ROOMS NO.</label>
+            <select name="selected_room" id="room" required>
+                <option value="" disabled selected>Select your option</option>
+                <option value="room 1">Room 1</option>
+                <option value=" room 2">Room 2</option>
+                <option value="room 3">Room 3</option>
+                <option value="room 4">Room 4</option>
+                <option value="room 5">Room 5</option>
+                <option value="room 6">Room 6</option>
+                <option value="room 7">Room 7</option>
+                <option value="room 8">Room 8</option>
+                <option value="room 9">Room 9</option>
+                <option value="room 10">Room 10</option>
+
+                
+            </select><br><br>
+
+           
+
+            <button type="submit">Submit</button> 
+        </form>
+    </div>  
+</body>
+</html>
