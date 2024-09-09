@@ -1,8 +1,12 @@
 <?php
 include_once 'connect.php';
-$email = "email";
-$password = "password";
 
+session_start();
+$email = $_POST["email"];
+$password = $_POST["password"];
+
+
+echo "email: $email password: $password <br>";
 
 // Check connection
 if (!$conn) {
@@ -14,27 +18,30 @@ else{
 }
 
 // Write and execute the query
-$sql = "SELECT id,password, email FROM registers";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM registers WHERE email='$email' AND password='$password';";
+$result =  mysqli_query($conn, $sql);
 
 // Fetch and display the results
 if($result->num_rows>0){
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["id"]. " - email: " . $row["email"]. " - password: " . $row["password"]."<br>";
-    }
+    // fetched data will be only one row
+   $row = $result->fetch_assoc();
+    echo "<br> Firstname: ".$row["firstname"]. " Lastname: ".$row["lastname"] ." <br> ID: " . $row["ID"]."<br>". " Email: " . $row["email"]."<br>". "Password: " . $row["password"]."<br>";
+   
+   // save data to the session to be used across multiple pages
+    $_SESSION["firstname"] = $row["firstname"];
+    $_SESSION["lastname"] = $row["lastname"];
+    $_SESSION["id"] = $row["ID"];
+    $_SESSION["email"] = $row["email"];
+    $_SESSION["password"] = $row["password"];
+
+
+    header("Location: booking-form-gui.php");
 } else {
+    header("Location: index.html");
     echo "0 results";
+    die();
 }
 
-try{
-    mysqli_query($conn, $sql);
-    header("Location:");
-    print("sent");
-    die();
-}catch(Exception $error){
-    echo 'ERROR'.$error;
-}   
 
 // Close the connection
 $conn->close();
