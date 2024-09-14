@@ -18,18 +18,17 @@ else{
 }
 
 // Write and execute the query
-$sql = "SELECT * FROM registers WHERE email='$email' AND password='$password';";
+$sql = "SELECT * FROM users WHERE email='$email' AND password='$password';";
 $result =  mysqli_query($conn, $sql);
 
 // Fetch and display the results
 if($result->num_rows>0){
     // fetched data will be only one row
    $row = $result->fetch_assoc();
-    echo "<br> Firstname: ".$row["firstname"]. " Lastname: ".$row["lastname"] ." <br> ID: " . $row["ID"]."<br>". " Email: " . $row["email"]."<br>". "Password: " . $row["password"]."<br>";
+    echo "<br> Full Name: ".$row["fullname"]." <br> ID: " . $row["ID"]."<br>". " Email: " . $row["email"]."<br>". "Password: " . $row["password"]."<br>";
    
    // save data to the session to be used across multiple pages
-    $_SESSION["firstname"] = $row["firstname"];
-    $_SESSION["lastname"] = $row["lastname"];
+    $_SESSION["fullname"] = $row["fullname"];
     $_SESSION["id"] = $row["ID"];
     $_SESSION["email"] = $row["email"];
 
