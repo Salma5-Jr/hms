@@ -32,7 +32,6 @@ if($result->num_rows>0){
     $_SESSION["lastname"] = $row["lastname"];
     $_SESSION["id"] = $row["ID"];
     $_SESSION["email"] = $row["email"];
-    $_SESSION["password"] = $row["password"];
 
 
     header("Location: booking-form-gui.php");

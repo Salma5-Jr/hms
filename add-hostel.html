@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    <body>
+    
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Add Hostel</title>
+          
+        </head>
+        <body>
+            <div class="container">
+                <h2>Add Hostel and Rooms</h2>
+                <form action="add-hostel.php" method="POST">
+                    <!-- Hostel Details -->
+                    <label for="hostel_name">Hostel Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+        
+                    <label for="hostel_description">Hostel Description:</label>
+                    <textarea id="hostel_description" name="description" rows="3" required></textarea>
+        
+                    <!-- Room 1 Details -->
+                    <h3>Room 1</h3>
+                    <label for="room_name_1">Room Name:</label>
+                    <input type="text" id="room_name" name="room_name" required>
+        
+                    <label for="room_type_1">Room Type:</label>
+                    <input type="text" id="room_type" name="room_type" required>
+        
+                    <label for="room_description_1">Room Description:</label>
+                    <textarea id="room_description" name="room_description" rows="2" required></textarea>
+        
+                    <label for="price_1">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+        
+                    <!-- Add more rooms as needed (duplicate the block above) -->
+        
+                    <button type="submit" name="submit">Add Hostel and Rooms</button>
+                </form>
+            </div>
+        </body>
+        </html>
+        
+    
+     
+</body>
+</html>
